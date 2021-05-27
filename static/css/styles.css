@@ -206,6 +206,7 @@ header {
 
 .news__description {
     text-align: center;
+    min-height: 100px;
 }
 
 .news__date {
