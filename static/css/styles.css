@@ -194,6 +194,8 @@ header {
 
 .news__img {
     width: 100%;
+    max-height: 270px;
+    object-fit: cover;
 }
 
 .news__title {
