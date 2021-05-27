@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}
+{% block content %}
+    {% include 'components/header.html' %}
+
+    <div class="slider">
+        <div class="container">
+            <div class="slider__inner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <p class="slider__text">Создание веб-сайта</p>
+                                <img class="slider__photo" src="{% static 'img/slider/web.png' %}" width="1152" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <p class="slider__text">Компьютерные игры</p>
+                                <img class="slider__photo" src="{% static 'img/slider/3d.png' %}" width="1152" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <p class="slider__text">1С: Предприятие 8.3</p>
+                                <img class="slider__photo" src="{% static 'img/slider/1c.png' %}" width="1152" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <p class="slider__text">Мобильные приложения</p>
+                                <img class="slider__photo" src="{% static 'img/slider/2.png' %}" width="1152" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subheader">
+        <p class="subheader__text">Запишись на курсы</p>
+    </div>
+    
+    <div class="cources">
+        <div class="cource__item">
+            <div class="container">
+                <img src="{% static 'img/design.png' %}" alt="" class="cource__img">
+                <div class="cource__content">
+                    <div class="cource__header">Создание веб-сайта</div>
+                    <div class="cource__text">Цель программы:
+                        Формирование компетенций, направленных
+                        на ознакомление с методами создания веб-сайта.
+                        </div>
+                    <input id="cources__switch1" class="info__switch" type="checkbox">
+                    <label for="cources__switch1" class="cource__popup">Результат обучения:</label>
+                    <div class="cource__popup-text">
+                        <li>Создание реального веб-сайта и ознакомление с особенностями подготовки, проектирования и разработки сайта, начиная с установки программного обеспечения и заканчивая готовым веб-сайтом.</li>
+                    </div>
+                </div>
+                <a class="cource__btn" href="{% url 'register' %}">Записаться</a>
+            </div>
+        </div>
+
+        <div class="cource__item">
+            <div class="container">
+                <img src="{% static 'img/mobile.png' %}" alt="" class="cource__img">
+                <div class="cource__content">
+                    <div class="cource__header">Создание цифрового контента для мобильных приложений</div>
+                    <div class="cource__text">Цель программы: 
+                        Формирование компетенций, направленных на разработку цифрового контента (видео, аудио, фото) для мобильных приложений.
+                        </div>
+                    <input id="cources__switch2" class="info__switch" type="checkbox">
+                    <label for="cources__switch2" class="cource__popup">Результат обучения:</label>
+                    <div class="cource__popup-text">
+                        <li>!!!!!!!!!!!!</li>
+                    </div>
+                </div>
+                <a class="cource__btn" href="{% url 'register' %}">Записаться</a>
+            </div>
+        </div>
+
+        <div class="cource__item">
+            <div class="container">
+                <img src="{% static 'img/3d.png' %}" alt="" class="cource__img">
+                <div class="cource__content">
+                    <div class="cource__header">Создание цифрового контента для компьютерных игр</div>
+                    <div class="cource__text">Цель программы: Формирование компетенций, направленных на создание цифрового контента для компьютерных игр.
+                        </div>
+                    <input id="cources__switch3" class="info__switch" type="checkbox">
+                    <label for="cources__switch3" class="cource__popup">Результат обучения:</label>
+                    <div class="cource__popup-text">
+                        <li>!!!!!!!!</li>
+                    </div>
+                </div>
+                <a class="cource__btn" href="{% url 'register' %}">Записаться</a>
+            </div>
+        </div>
+
+        <div class="cource__item">
+            <div class="container">
+                <img src="{% static 'img/1c.png' %}" alt="" class="cource__img">
+                <div class="cource__content">
+                    <div class="cource__header">Введение в конфигурирование в системе 1С: Предприятие 8.3</div>
+                    <div class="cource__text">Цель программы:
+                        Формирование компетенций, направленных на изучение основ программирования и создание собственных программ в системе «1С:Предприятие 8».
+                        </div>
+                    <input id="cources__switch4" class="info__switch" type="checkbox">
+                    <label for="cources__switch4" class="cource__popup">Результат обучения:</label>
+                    <div class="cource__popup-text">
+                        <li>!!!!!!!!</li>
+                    </div>
+                </div>
+                <a class="cource__btn" href="{% url 'register' %}">Записаться</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="subheader">
+        <p class="subheader__text">Новости</p>
+    </div>
+
+    <div class="news">
+        <div class="container">
+            <div class="news__inner">
+                {% for news_item in items %}
+                    <div class="news__item">
+                        <img src="{{news_item.photo.url}}" alt="" class="news__img">
+                        <div class="news__content">
+                            <div class="news__title">{{news_item.title}}</div>
+                            <div class="news__description">{{news_item.description}}</div>
+                            <div class="news__date">{{news_item.created}}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="subheader">
+        <a class="subheader__link" href="{% url 'main' %}">Главная</a>
+        <a class="subheader__link" href="{% url 'register' %}">Записаться на курсы</a>
+        <a class="subheader__link" href="{% url 'about' %}">О нас</a>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 3500,
+            },
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+{% endblock %}

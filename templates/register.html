@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Оформление заявки{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}
+{% block content %}
+    <header style="position: absolute;width: 100%;">
+        <div class="container">
+            <div class="header__inner">
+                <img src="{% static 'img/left_logo.png' %}" alt="" class="left_logo">
+                <div class="header__text">ИНФОРМАЦИОННЫЕ И КОММУНИКАЦИОННЫЕ ТЕХНОЛОГИИ</div>
+                <img src="{% static 'img/right_logo.png' %}" alt="" class="right_logo">
+            </div>
+        </div>
+    </header>
+
+    <div class="register">
+        <div class="container">
+            <div class="register__inner">
+                <div class="register__title">Введите данные для записи на курсы</div>
+                <div class="separation"></div>
+                <div class="register__subtitle">Заполните все поля</div>
+                <form action="." method="post" class="register__form">
+                    {% csrf_token %}
+                    <input type="text" name="parent_name" placeholder="ФИО Родителя/Законного представителя">
+                    <input type="phone" name="parent_phone" placeholder="Телефон Родителя/Законного представителя">
+                    <input type="text" name="name" placeholder="ФИО Ученика">
+                    <input type="phone" name="phone" placeholder="Телефон Ученика">
+                    <input type="email" name="email" placeholder="Эл. почта">
+                    <input type="text" name="school" placeholder="Школа/класс">
+                    <input type="text" name="address" placeholder="Адрес проживания">
+                    <input type="submit" value="Записаться">
+                    <div class="register_info">
+                        {% if info %}
+                            <li>{{info}}</li>
+                        {% endif %}
+                        {% if form.errors %}
+                                {% for field in form %}
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                    <li>{{ field.label }} {{ error|escape }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% if form.non_field_errors %}
+                                {{ form.non_field_errors }}
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="subheader">
+        <a class="subheader__link" href="{% url 'main' %}">Главная</a>
+        <a class="subheader__link" href="{% url 'register' %}">Записаться на курсы</a>
+        <a class="subheader__link" href="{% url 'about' %}">О нас</a>
+    </div>
+
+    {% include 'components/footer.html' %}
+{% endblock %}
